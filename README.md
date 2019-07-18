@@ -2,7 +2,7 @@
 
 [![N|Solid](https://www.prateektechnosoft.com/img/prateek-logo.png)](https://www.prateektechnosoft.com)
 
-Nscript is the Nodeze platform built on JavaScript that enables complete Integration between different 3rd party applications. Using the Nscript APIs, core business records and user information from various application can be accessed and manipulated via scripts that are executed at scheduled and request events. For example, Web requests , Scheduled reporting.
+Nscript is a Javacript Library used in Nodeze Integration platform built that enables complete Integration of data between different 3rd party applications. Using the Nscript APIs, core business records and user information from various application can be accessed and manipulated via scripts that are executed at scheduled and request events. For example, Web requests , Scheduled.
 
   - Ecma 5.1 Implementation
   - Standard module for Email Http Db access etc.
@@ -24,6 +24,7 @@ You can also:
 Nscript uses a JINT as its javascript Interpreter.
 
 * [C#] - Written using C#
+
 
 
 
