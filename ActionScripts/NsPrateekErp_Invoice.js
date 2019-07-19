@@ -1,31 +1,36 @@
+
+        
+        
+        
 function post(ctx)
 {
     var request = JSON.parse(ctx.request.body);
-
     $LOG.debug("NS_RES" , request );
-    var recordId = request.recordId;
+    var recordId = request.recordId.toString();
     var recordType = request.recordType;
-
     //Initialize Ns
     $NS.initialize({
         id:8
     });
 
-    var record = $NS.getRecord({
+    var response = $NS.getRecord({
         id:recordId,
         type:recordType
     });
     
-    return record;
+    
+var record = response.record;
+ 
+ $LOG.debug("record",record);
 
-$PTS.initalize({
+$PTS.initialize({
     url:"http://prateekerp.com:9080/erpservice/erp/E01/0001?tranid=DNSINA"
 });
 
 var pts_res = $PTS.send({
-    payload:record,
-    xtrancode: "NS_"+record.type,
-    keyid : "TSTDRV2111191_" + record.id
+    payload: JSON.stringify(record),
+    xtrancode: "NS_"+recordType,
+    keyid : "TSTDRV2111191_" + record.internalId
 });
 
 pts_res = JSON.parse(pts_res);
@@ -38,3 +43,11 @@ return {
 };
 
 }
+    
+    
+    
+    
+    
+    
+    
+    
