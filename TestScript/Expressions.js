@@ -7,3 +7,8 @@ return teststring.split(" ");
 
 
 }
+
+function Test()
+{
+    return true;
+}
