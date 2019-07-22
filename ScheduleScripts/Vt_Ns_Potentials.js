@@ -1,7 +1,6 @@
-function Execute()
+function Execute(ctx)
 {
     var records = getRecordsFromVitger();
-
     records.forEach(function(potential){
             var nsopp = transfromRecord(potential);
             $NS.initialize({
@@ -9,9 +8,7 @@ function Execute()
             });
             var res = $NS.upsert(nsopp);
             $LOG.debug("res",res);
-    })
-
-
+    });
 }
 
 
@@ -67,9 +64,7 @@ function transfromRecord(src_rec)
         opp.subsidiary = {
             internalid:17
         };
-
         return opp;
-
 }
 
 /**
@@ -117,7 +112,6 @@ var customfieldlist = [
         scriptid:"custbodycf_potentials_earlypercent",
         value: srcrec.cf_potentials_earlypercent
     }),
-
     //select fields
     $NS.createCustomField({
         type:"select",
